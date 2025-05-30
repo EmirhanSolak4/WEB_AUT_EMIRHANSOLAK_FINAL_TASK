@@ -22,10 +22,10 @@ describe('Final Task - Form Automation', () => {
     // Subject
     cy.get('.subjects-auto-complete__value-container').click().type('Economics{enter}');
 
-    // Hobbies
+    
     cy.get('#hobbies-checkbox-3').check({ force: true }); // Music
 
-    // Upload file
+    
     cy.get('#uploadPicture').selectFile('cypress/files/profile.jpg');
 
     // Address (optional ama boş geçmeyelim)
@@ -43,14 +43,9 @@ cy.get('#react-select-4-option-0', { timeout: 5000 }).should('be.visible').click
 
 
 
-    
-
-
-
-    // Submit
     cy.get('#submit').click();
 
-    // ✅ VALIDATION
+    //  VALIDATION
     cy.get('td').contains('Emirhan Solak').should('be.visible');
     cy.get('td').contains('emirhan@example.com').should('be.visible');
     cy.get('td').contains('Other').should('be.visible');
